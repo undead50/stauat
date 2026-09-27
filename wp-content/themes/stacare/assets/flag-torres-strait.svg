@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" role="img" aria-label="Torres Strait Islander Flag">
+  <rect width="300" height="200" fill="#009A44"/>
+  <rect y="40" width="300" height="120" fill="#000000"/>
+  <rect y="50" width="300" height="100" fill="#0072CE"/>
+  <path d="M95,100 L105,75 L115,90 L125,65 L135,85 L150,55 L165,85 L175,65 L185,90 L195,75 L205,100 Q150,120 95,100 Z" fill="#FFFFFF"/>
+  <polygon points="150,101 155.3,115.7 170.9,116.2 158.6,125.8 162.9,140.8 150,132 137.1,140.8 141.4,125.8 129.1,116.2 144.7,115.7" fill="#FFFFFF"/>
+</svg>
