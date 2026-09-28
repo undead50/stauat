@@ -11,7 +11,12 @@
 	height: 60px;
 	border-radius: 999px;
 	border: none;
-	background: var(--stachat-brand, #6B3FA0);
+	/* Hard-coded rather than var(--stachat-brand) on purpose: this is just
+	   the closed, floating icon - a bright, WhatsApp-style green so it
+	   reads as an obvious "tap to chat" button against any part of the
+	   page. The panel that opens still uses --stachat-brand (the site's
+	   own purple) throughout, so the actual chat window stays on-brand. */
+	background: #25D366;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -19,6 +24,14 @@
 	cursor: pointer;
 	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
 	transition: transform 0.15s ease;
+	/* Same slow bob as the theme's own "call us" button that now sits
+	   right above this one (see main.scss's .animate-float / @keyframes
+	   floatY) - referencing it by name here instead of redefining it
+	   keeps the two moving in perfect sync, and since that keyframe only
+	   exists at all inside the theme's own prefers-reduced-motion guard,
+	   this animation is automatically a no-op for anyone who has reduced
+	   motion turned on, without needing its own media query here. */
+	animation: floatY 7s ease-in-out infinite;
 }
 .stachat-bubble:hover {
 	transform: scale(1.06);

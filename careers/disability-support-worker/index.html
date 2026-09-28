@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-AU">
-<head>
+<head><script>
+// Static client-preview only (see README.md): this snapshot has no backend,
+// so any call to the WordPress REST API can never succeed - short-circuit
+// it immediately into whatever the caller's own failure handling already
+// does, instead of a real cross-origin request that hangs, fails with a
+// CORS error, and spams the console.
+(function () {
+  var realFetch = window.fetch;
+  window.fetch = function (input, init) {
+    var url = typeof input === 'string' ? input : (input && input.url) || '';
+    if (url.indexOf('/wp-json/') !== -1) {
+      return Promise.reject(new Error('Static preview: no backend available.'));
+    }
+    return realFetch.apply(this, arguments);
+  };
+})();
+</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script>document.documentElement.classList.add( 'js' );</script>
@@ -63,7 +79,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <link href="../../wp-content/plugins/sta-chat-assistant/assets/css/chat-widget.css" id="stachat-widget-css" media="all" rel="stylesheet"/>
 <link href="../../wp-content/plugins/sta-push-notifications/assets/css/subscribe-popup.css" id="stapush-popup-css" media="all" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" id="stacare-fonts-css" media="all" rel="stylesheet"/>
-<link href="../../wp-content/themes/stacare/dist/assets/main-ZvuRNQZR.css" id="stacare-style-css" media="all" rel="stylesheet"/>
+<link href="../../wp-content/themes/stacare/dist/assets/main-BUppay8t.css" id="stacare-style-css" media="all" rel="stylesheet"/>
 <link href="http://localhost:8080/careers/disability-support-worker/" rel="canonical"/>
 </head>
 <body class="wp-singular page-template-default page page-id-659 page-child parent-pageid-48 wp-custom-logo wp-embed-responsive wp-theme-stacare bg-brand-canvas text-on-surface font-body-md text-body-md antialiased min-h-screen overflow-x-hidden selection:bg-secondary-light selection:text-primary">
@@ -670,6 +686,8 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </footer>
 <button aria-label="Back to top" class="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-primary text-on-primary shadow-lg hidden lg:flex items-center justify-center" data-back-to-top="" id="back-to-top" type="button">
 <span aria-hidden="true" class="material-symbols-outlined notranslate" data-icon="arrow_upward" translate="no"></span></button>
+<a aria-label="Call us on 1300 782 227" class="stacare-call-fab animate-float fixed z-40 lg:hidden flex items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg" href="tel:1300782227" id="stacare-call-fab">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[26px]" data-icon="call" translate="no"></span></a>
 <dialog aria-labelledby="stacare-journey-modal-title" class="stacare-modal" data-journey-modal="">
 <div class="stacare-modal-panel">
 <div class="stacare-modal-header">
@@ -841,19 +859,19 @@ var staA11y = {"position":"left","color":"#2F8F4E","languages":[{"code":"","labe
 </script>
 <script data-wp-strategy="defer" defer="" id="staa11y-widget-js" src="../../wp-content/plugins/sta-accessibility/assets/js/a11y-widget.js"></script>
 <script id="stachat-widget-js-extra">
-var staChat = {"restUrl":"http://localhost:8080/wp-json/sta-chat/v1/message","restNonce":"a32997234d","botName":"Tripti","brandColor":"#6B3FA0","strings":{"placeholder":"Type a message...","send":"Send","close":"Close chat","open":"Open chat","error":"Sorry, something went wrong. Please try again in a moment, or call us directly."}};
+var staChat = {"restUrl":"http://localhost:8080/wp-json/sta-chat/v1/message","restNonce":"7f0ba314db","botName":"Tripti","brandColor":"#6B3FA0","strings":{"placeholder":"Type a message...","send":"Send","close":"Close chat","open":"Open chat","error":"Sorry, something went wrong. Please try again in a moment, or call us directly."}};
 //# sourceURL=stachat-widget-js-extra
 </script>
 <script data-wp-strategy="defer" defer="" id="stachat-widget-js" src="../../wp-content/plugins/sta-chat-assistant/assets/js/chat-widget.js"></script>
 <script id="stapush-subscribe-js-extra">
-var staPush = {"restUrl":"http://localhost:8080/wp-json/sta/v1/push/","restNonce":"a32997234d","vapidPublicKey":"BE5D8dPkrR6gV2pNWWXIW_edDcNZCd0wg9rWonZAGQOYgmxAZK02yzSRIf1xy5kajaF66odv2efjSWtQZ1rFgl8","serviceWorkerUrl":"http://localhost:8080/sta-push-sw.js"};
+var staPush = {"restUrl":"http://localhost:8080/wp-json/sta/v1/push/","restNonce":"7f0ba314db","vapidPublicKey":"BE5D8dPkrR6gV2pNWWXIW_edDcNZCd0wg9rWonZAGQOYgmxAZK02yzSRIf1xy5kajaF66odv2efjSWtQZ1rFgl8","serviceWorkerUrl":"http://localhost:8080/sta-push-sw.js"};
 //# sourceURL=stapush-subscribe-js-extra
 </script>
 <script data-wp-strategy="defer" defer="" id="stapush-subscribe-js" src="../../wp-content/plugins/sta-push-notifications/assets/js/subscribe.js"></script>
 <script id="stacare-script-js-extra">
-var staCare = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","contactNonce":"3bbbeb80ed","newsletterNonce":"02cac50c23","journeyUrl":"http://localhost:8080/start-your-journey/","suburbsUrl":"http://localhost:8080/wp-content/themes/stacare/assets/au-suburbs.txt?v=1789922316","homeState":"VIC"};
+var staCare = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","contactNonce":"52302aff77","newsletterNonce":"f23fe7b9d3","journeyUrl":"http://localhost:8080/start-your-journey/","suburbsUrl":"http://localhost:8080/wp-content/themes/stacare/assets/au-suburbs.txt?v=1789922316","homeState":"VIC"};
 //# sourceURL=stacare-script-js-extra
 </script>
-<script id="stacare-script-js" src="../../wp-content/themes/stacare/dist/assets/main-DLezcT7a.js" type="module"></script>
+<script id="stacare-script-js" src="../../wp-content/themes/stacare/dist/assets/main-BH5VrSg4.js" type="module"></script>
 </body>
 </html>
