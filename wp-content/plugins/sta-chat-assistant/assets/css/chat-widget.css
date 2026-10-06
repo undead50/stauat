@@ -37,6 +37,26 @@
 	transform: scale(1.06);
 }
 
+/* The speech-bubble icon gives a short wiggle every few seconds to draw the
+   eye, then holds still. Only under the no-preference media query, so
+   visitors who have reduced motion turned on see the static icon. */
+.stachat-bubble svg {
+	transform-origin: 50% 60%;
+}
+@media (prefers-reduced-motion: no-preference) {
+	.stachat-bubble svg {
+		animation: stachat-wiggle 4s ease-in-out infinite;
+	}
+}
+@keyframes stachat-wiggle {
+	0%, 60%, 100% { transform: rotate(0deg); }
+	65% { transform: rotate(-12deg); }
+	70% { transform: rotate(10deg); }
+	75% { transform: rotate(-8deg); }
+	80% { transform: rotate(5deg); }
+	85% { transform: rotate(0deg); }
+}
+
 .stachat-panel {
 	position: absolute;
 	right: 0;
