@@ -84,7 +84,7 @@
 }
 
 .stachat-header {
-	background: var(--stachat-brand, #6B3FA0);
+	background: var(--stachat-brand, #501CA8);
 	color: #fff;
 	padding: 16px 18px;
 	display: flex;
@@ -139,12 +139,12 @@
 	border-bottom-left-radius: 4px;
 }
 .stachat-msg-bot a {
-	color: var(--stachat-brand, #6B3FA0);
+	color: var(--stachat-brand, #501CA8);
 	font-weight: 600;
 }
 .stachat-msg-user {
 	align-self: flex-end;
-	background: var(--stachat-brand, #6B3FA0);
+	background: var(--stachat-brand, #501CA8);
 	color: #fff;
 	border-bottom-right-radius: 4px;
 }
@@ -179,9 +179,9 @@
 	gap: 8px;
 }
 .stachat-quick-reply {
-	border: 1.5px solid var(--stachat-brand, #6B3FA0);
+	border: 1.5px solid var(--stachat-brand, #501CA8);
 	background: #fff;
-	color: var(--stachat-brand, #6B3FA0);
+	color: var(--stachat-brand, #501CA8);
 	border-radius: 999px;
 	padding: 5px 12px;
 	font-size: 12px;
@@ -190,7 +190,7 @@
 	transition: background 0.15s ease, color 0.15s ease;
 }
 .stachat-quick-reply:hover {
-	background: var(--stachat-brand, #6B3FA0);
+	background: var(--stachat-brand, #501CA8);
 	color: #fff;
 }
 
@@ -216,10 +216,10 @@
 	outline: none;
 }
 .stachat-input:focus {
-	border-color: var(--stachat-brand, #6B3FA0);
+	border-color: var(--stachat-brand, #501CA8);
 }
 .stachat-send {
-	background: var(--stachat-brand, #6B3FA0);
+	background: var(--stachat-brand, #501CA8);
 	color: #fff;
 	border: none;
 	border-radius: 999px;
