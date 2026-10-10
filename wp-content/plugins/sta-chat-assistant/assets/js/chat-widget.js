@@ -103,33 +103,29 @@
 		root.appendChild( bubble );
 		document.body.appendChild( root );
 
-		// While set, the scroll handler below won't show the teaser even on
-		// a qualifying downward scroll - the 20s "hold" after a dismiss.
 		var TEASER_HOLD_MS = 20000;
-		var teaserHeldUntil = 0;
 		var teaserReappearTimer = null;
 
 		function hideTeaser() {
 			teaser.classList.remove( 'is-visible' );
 		}
 
-		// Dismissing (the X, specifically - not opening the chat) holds the
-		// scroll-triggered show/hide below for 20s, then brings the teaser
-		// back on its own - a "snooze", not a one-off dismissal, so it isn't
-		// gone for good the moment it's closed.
+		function showTeaser() {
+			if ( ! root.classList.contains( 'is-open' ) ) {
+				teaser.classList.add( 'is-visible' );
+			}
+		}
+
+		// Dismissing (the X, specifically - not opening the chat) isn't for
+		// good - it holds the teaser for 20s, then brings it back on its
+		// own, a "snooze" rather than a one-off dismissal.
 		function dismissTeaser() {
 			hideTeaser();
-			teaserHeldUntil = Date.now() + TEASER_HOLD_MS;
 
 			if ( teaserReappearTimer ) {
 				clearTimeout( teaserReappearTimer );
 			}
-			teaserReappearTimer = setTimeout( function () {
-				teaserHeldUntil = 0;
-				if ( ! root.classList.contains( 'is-open' ) ) {
-					teaser.classList.add( 'is-visible' );
-				}
-			}, TEASER_HOLD_MS );
+			teaserReappearTimer = setTimeout( showTeaser, TEASER_HOLD_MS );
 		}
 
 		bubble.addEventListener( 'click', function () {
@@ -173,29 +169,10 @@
 			send( text, messages, honeypot );
 		} );
 
-		// Shows on every downward scroll past the threshold and hides again
-		// on any upward scroll - including after being dismissed (once its
-		// 20s hold above has lapsed), or after the chat's been opened and
-		// closed again, so it tracks the current scroll direction rather
-		// than being a one-time-per-visit nudge. Suppressed while the panel
-		// is actually open, or during that 20s post-dismiss hold.
-		var SCROLL_TRIGGER_PX = 400;
-		var lastScrollY = window.scrollY;
-		window.addEventListener( 'scroll', function () {
-			var y = window.scrollY;
-			var scrollingDown = y > lastScrollY;
-			lastScrollY = y;
-
-			if ( root.classList.contains( 'is-open' ) || Date.now() < teaserHeldUntil ) {
-				return;
-			}
-
-			if ( scrollingDown && y > SCROLL_TRIGGER_PX ) {
-				teaser.classList.add( 'is-visible' );
-			} else if ( ! scrollingDown ) {
-				teaser.classList.remove( 'is-visible' );
-			}
-		}, { passive: true } );
+		// Shows once, a few seconds after the page loads - not tied to
+		// scrolling at all. A dismiss still only holds it for 20s (see
+		// dismissTeaser) before offering the nudge again.
+		setTimeout( showTeaser, 4000 );
 	}
 
 	function openPanel( root, messages, honeypot ) {
