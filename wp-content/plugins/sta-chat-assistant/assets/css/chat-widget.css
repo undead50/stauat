@@ -7,6 +7,7 @@
 }
 
 .stachat-bubble {
+	position: relative;
 	width: 60px;
 	height: 60px;
 	border-radius: 999px;
@@ -57,6 +58,27 @@
 	85% { transform: rotate(0deg); }
 }
 
+/* The small white-ringed green "online" dot Messenger layers onto the
+   corner of every chat head/avatar - same look on the closed bubble and
+   the panel header's avatar below. Messenger's own online green (not
+   --stachat-brand or the bubble's WhatsApp green): it needs to read as a
+   status indicator, not just match whatever's behind it. */
+.stachat-status-dot {
+	position: absolute;
+	right: -1px;
+	bottom: -1px;
+	width: 15px;
+	height: 15px;
+	border-radius: 999px;
+	background: #31a24c;
+	border: 2.5px solid #fff;
+}
+.stachat-header-avatar .stachat-status-dot {
+	width: 11px;
+	height: 11px;
+	border-width: 2px;
+}
+
 .stachat-panel {
 	position: absolute;
 	right: 0;
@@ -86,13 +108,45 @@
 .stachat-header {
 	background: var(--stachat-brand, #501CA8);
 	color: #fff;
-	padding: 16px 18px;
+	padding: 14px 18px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-shrink: 0;
+}
+.stachat-header-info {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+.stachat-header-avatar {
+	position: relative;
+	flex-shrink: 0;
+	width: 36px;
+	height: 36px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.18);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.stachat-header-avatar svg {
+	width: 19px;
+	height: 19px;
+}
+.stachat-header-text {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.3;
+}
+.stachat-header-name {
 	font-weight: 700;
 	font-size: 15px;
-	flex-shrink: 0;
+}
+.stachat-header-status {
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .stachat-close {
@@ -233,6 +287,84 @@
 	filter: brightness(1.08);
 }
 
+/* Teaser notification: a white card with a speech-bubble tail pointing at
+   the chat head, bold name + a lighter preview line, and its own small
+   dismiss circle - the same unprompted "new message" look Messenger shows
+   beside a contact's chat head. Hidden by default/collapsed down near the
+   bubble, then eases up into place once chat-widget.js adds .is-visible. */
+.stachat-teaser {
+	position: absolute;
+	right: 76px;
+	bottom: 14px;
+	width: 236px;
+	max-width: calc(100vw - 110px);
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+	padding: 13px 16px;
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(8px, 8px) scale(0.92);
+	transform-origin: bottom right;
+	transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.stachat-teaser.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translate(0, 0) scale(1);
+}
+.stachat-root.is-open .stachat-teaser {
+	/* The panel covers this corner once open; avoid a stray click-through
+	   or a dismiss button fighting the panel's own close button. */
+	display: none;
+}
+.stachat-teaser::after {
+	content: '';
+	position: absolute;
+	right: -6px;
+	bottom: 22px;
+	width: 14px;
+	height: 14px;
+	background: #fff;
+	border-radius: 3px;
+	transform: rotate(45deg);
+}
+.stachat-teaser-name {
+	display: block;
+	font-size: 14.5px;
+	font-weight: 700;
+	color: #050505;
+	margin-bottom: 3px;
+}
+.stachat-teaser-text {
+	margin: 0;
+	font-size: 13.5px;
+	line-height: 1.4;
+	color: #65676b;
+}
+.stachat-teaser-close {
+	position: absolute;
+	top: -8px;
+	right: -8px;
+	width: 24px;
+	height: 24px;
+	border-radius: 999px;
+	border: 1px solid #e4e6eb;
+	background: #fff;
+	color: #65676b;
+	font-size: 11px;
+	line-height: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.stachat-teaser-close:hover {
+	background: #f2f3f5;
+}
+
 .stachat-honeypot {
 	position: absolute;
 	left: -9999px;
@@ -257,6 +389,11 @@
 		height: min(70vh, 560px);
 		max-height: calc(100vh - 88px);
 	}
+	.stachat-teaser {
+		right: 68px;
+		bottom: 6px;
+		width: 200px;
+	}
 }
 
 /* On a short viewport (an older/smaller phone in landscape or portrait,
@@ -271,6 +408,10 @@
 	.stachat-bubble {
 		width: 48px;
 		height: 48px;
+	}
+	.stachat-teaser {
+		right: 62px;
+		bottom: 2px;
 	}
 }
 

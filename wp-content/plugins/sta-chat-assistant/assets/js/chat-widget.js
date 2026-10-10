@@ -46,16 +46,53 @@
 		return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>';
 	}
 
+	// sessionStorage, not localStorage: a visitor who dismisses or opens the
+	// teaser shouldn't see it again on later pages *this visit*, but it's
+	// a one-time nudge, not a permanent opt-out - a fresh tab/session gets
+	// another chance to notice it.
+	var TEASER_KEY = 'stachat_teaser_seen';
+
+	function teaserSeen() {
+		try {
+			return sessionStorage.getItem( TEASER_KEY ) === '1';
+		} catch ( e ) {
+			return false;
+		}
+	}
+
+	function markTeaserSeen() {
+		try {
+			sessionStorage.setItem( TEASER_KEY, '1' );
+		} catch ( e ) {
+			// Private browsing etc. - worst case the teaser can reappear on
+			// the next page, which is harmless.
+		}
+	}
+
 	function buildWidget() {
 		var root = el( 'div', { class: 'stachat-root', style: '--stachat-brand:' + config.brandColor + ';' } );
 
+		// Messenger-style "chat head": the closed bubble's own icon, plus a
+		// small white-ringed green dot layered on top, same corner Messenger
+		// uses to show a contact is online.
 		var bubble = el( 'button', { class: 'stachat-bubble', type: 'button', 'aria-label': config.strings.open } );
 		bubble.innerHTML = bubbleIconSvg();
+		bubble.appendChild( el( 'span', { class: 'stachat-status-dot', 'aria-hidden': 'true' } ) );
 
 		var panel = el( 'div', { class: 'stachat-panel' } );
 
-		var header    = el( 'div', { class: 'stachat-header' }, [ el( 'span', { text: config.botName } ) ] );
-		var closeBtn  = el( 'button', { class: 'stachat-close', type: 'button', 'aria-label': config.strings.close, text: '✕' } );
+		// Header mirrors the same "avatar + name + status" layout Messenger
+		// uses in its own conversation header, instead of just a plain name.
+		var headerAvatar = el( 'span', { class: 'stachat-header-avatar', 'aria-hidden': 'true' } );
+		headerAvatar.innerHTML = bubbleIconSvg();
+		headerAvatar.appendChild( el( 'span', { class: 'stachat-status-dot', 'aria-hidden': 'true' } ) );
+		var headerText = el( 'span', { class: 'stachat-header-text' }, [
+			el( 'span', { class: 'stachat-header-name', text: config.botName } ),
+			el( 'span', { class: 'stachat-header-status', text: config.strings.activeNow } ),
+		] );
+		var headerInfo = el( 'span', { class: 'stachat-header-info' }, [ headerAvatar, headerText ] );
+		var header      = el( 'div', { class: 'stachat-header' }, [ headerInfo ] );
+		var closeBtn    = el( 'button', { class: 'stachat-close', type: 'button', 'aria-label': config.strings.close, text: '✕' } );
 		header.appendChild( closeBtn );
 
 		var messages = el( 'div', { class: 'stachat-messages', role: 'log', 'aria-live': 'polite' } );
@@ -73,16 +110,50 @@
 		panel.appendChild( messages );
 		panel.appendChild( form );
 
+		// The teaser notification card - a bold name + a short preview line
+		// with a speech-bubble tail pointing at the chat head, the same
+		// unprompted "new message" nudge Messenger shows next to its own
+		// chat heads. Dismissible on its own, independent of the panel.
+		var teaserClose = el( 'button', { class: 'stachat-teaser-close', type: 'button', 'aria-label': config.strings.dismissTeaser, text: '✕' } );
+		var teaser = el( 'div', { class: 'stachat-teaser', role: 'button', tabindex: '0' }, [
+			teaserClose,
+			el( 'strong', { class: 'stachat-teaser-name', text: config.botName } ),
+			el( 'p', { class: 'stachat-teaser-text', text: config.strings.teaserText } ),
+		] );
+
 		root.appendChild( panel );
+		root.appendChild( teaser );
 		root.appendChild( bubble );
 		document.body.appendChild( root );
 
+		function hideTeaser() {
+			teaser.classList.remove( 'is-visible' );
+			markTeaserSeen();
+		}
+
 		bubble.addEventListener( 'click', function () {
+			hideTeaser();
 			if ( root.classList.contains( 'is-open' ) ) {
 				closePanel( root );
 			} else {
 				openPanel( root, messages, honeypot );
 			}
+		} );
+
+		teaser.addEventListener( 'click', function () {
+			hideTeaser();
+			openPanel( root, messages, honeypot );
+		} );
+		teaser.addEventListener( 'keydown', function ( e ) {
+			if ( 'Enter' === e.key || ' ' === e.key ) {
+				e.preventDefault();
+				hideTeaser();
+				openPanel( root, messages, honeypot );
+			}
+		} );
+		teaserClose.addEventListener( 'click', function ( e ) {
+			e.stopPropagation();
+			hideTeaser();
 		} );
 
 		closeBtn.addEventListener( 'click', function () {
@@ -100,6 +171,19 @@
 			clearQuickReplies();
 			send( text, messages, honeypot );
 		} );
+
+		// A few seconds after load, not instantly - the same beat Messenger
+		// leaves before a chat head's first nudge appears, so it reads as a
+		// considered notification rather than something thrown up during
+		// page load. Skipped entirely if this tab has already seen/dismissed
+		// it, or if the visitor has already opened the chat by then.
+		if ( ! teaserSeen() ) {
+			setTimeout( function () {
+				if ( ! opened ) {
+					teaser.classList.add( 'is-visible' );
+				}
+			}, 4000 );
+		}
 	}
 
 	function openPanel( root, messages, honeypot ) {
