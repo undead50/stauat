@@ -46,29 +46,6 @@
 		return '<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>';
 	}
 
-	// sessionStorage, not localStorage: a visitor who dismisses or opens the
-	// teaser shouldn't see it again on later pages *this visit*, but it's
-	// a one-time nudge, not a permanent opt-out - a fresh tab/session gets
-	// another chance to notice it.
-	var TEASER_KEY = 'stachat_teaser_seen';
-
-	function teaserSeen() {
-		try {
-			return sessionStorage.getItem( TEASER_KEY ) === '1';
-		} catch ( e ) {
-			return false;
-		}
-	}
-
-	function markTeaserSeen() {
-		try {
-			sessionStorage.setItem( TEASER_KEY, '1' );
-		} catch ( e ) {
-			// Private browsing etc. - worst case the teaser can reappear on
-			// the next page, which is harmless.
-		}
-	}
-
 	function buildWidget() {
 		var root = el( 'div', { class: 'stachat-root', style: '--stachat-brand:' + config.brandColor + ';' } );
 
@@ -128,7 +105,6 @@
 
 		function hideTeaser() {
 			teaser.classList.remove( 'is-visible' );
-			markTeaserSeen();
 		}
 
 		bubble.addEventListener( 'click', function () {
@@ -172,18 +148,28 @@
 			send( text, messages, honeypot );
 		} );
 
-		// A few seconds after load, not instantly - the same beat Messenger
-		// leaves before a chat head's first nudge appears, so it reads as a
-		// considered notification rather than something thrown up during
-		// page load. Skipped entirely if this tab has already seen/dismissed
-		// it, or if the visitor has already opened the chat by then.
-		if ( ! teaserSeen() ) {
-			setTimeout( function () {
-				if ( ! opened ) {
-					teaser.classList.add( 'is-visible' );
-				}
-			}, 4000 );
-		}
+		// Shows on every downward scroll past the threshold and hides again
+		// on any upward scroll - including after being dismissed, or after
+		// the chat's been opened and closed again, so it tracks the current
+		// scroll direction rather than being a one-time-per-visit nudge.
+		// Only suppressed while the panel is actually open right now.
+		var SCROLL_TRIGGER_PX = 400;
+		var lastScrollY = window.scrollY;
+		window.addEventListener( 'scroll', function () {
+			var y = window.scrollY;
+			var scrollingDown = y > lastScrollY;
+			lastScrollY = y;
+
+			if ( root.classList.contains( 'is-open' ) ) {
+				return;
+			}
+
+			if ( scrollingDown && y > SCROLL_TRIGGER_PX ) {
+				teaser.classList.add( 'is-visible' );
+			} else if ( ! scrollingDown ) {
+				teaser.classList.remove( 'is-visible' );
+			}
+		}, { passive: true } );
 	}
 
 	function openPanel( root, messages, honeypot ) {
