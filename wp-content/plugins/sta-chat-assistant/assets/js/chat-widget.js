@@ -103,29 +103,26 @@
 		root.appendChild( bubble );
 		document.body.appendChild( root );
 
-		var TEASER_HOLD_MS = 20000;
-		var teaserReappearTimer = null;
+		var teaserDismissedForGood = false;
 
 		function hideTeaser() {
 			teaser.classList.remove( 'is-visible' );
 		}
 
 		function showTeaser() {
+			if ( teaserDismissedForGood ) {
+				return;
+			}
 			if ( ! root.classList.contains( 'is-open' ) ) {
 				teaser.classList.add( 'is-visible' );
 			}
 		}
 
-		// Dismissing (the X, specifically - not opening the chat) isn't for
-		// good - it holds the teaser for 20s, then brings it back on its
-		// own, a "snooze" rather than a one-off dismissal.
+		// Dismissing via the X (not opening the chat - that only hides it for
+		// that moment) is final: it never reappears again this visit.
 		function dismissTeaser() {
 			hideTeaser();
-
-			if ( teaserReappearTimer ) {
-				clearTimeout( teaserReappearTimer );
-			}
-			teaserReappearTimer = setTimeout( showTeaser, TEASER_HOLD_MS );
+			teaserDismissedForGood = true;
 		}
 
 		bubble.addEventListener( 'click', function () {
@@ -170,8 +167,8 @@
 		} );
 
 		// Shows once, a few seconds after the page loads - not tied to
-		// scrolling at all. A dismiss still only holds it for 20s (see
-		// dismissTeaser) before offering the nudge again.
+		// scrolling at all. Dismissing it via the X (see dismissTeaser)
+		// is final for the rest of this visit.
 		setTimeout( showTeaser, 4000 );
 	}
 
