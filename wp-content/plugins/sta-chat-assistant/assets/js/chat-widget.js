@@ -103,26 +103,75 @@
 		root.appendChild( bubble );
 		document.body.appendChild( root );
 
-		var teaserDismissedForGood = false;
+		var TEASER_DISMISSED_AT_KEY = 'stachatTeaserDismissedAt';
+		var TEASER_SHOWN_KEY        = 'stachatTeaserShown';
+		var REAPPEAR_DELAY_MS       = 60000;
+		var reappearTimer           = null;
+
+		// Marks that the teaser has already made its first, unprompted
+		// appearance this visit, so a visitor browsing from page to page
+		// only ever gets that automatic popup once - not again every single
+		// time they load a new page. Dismissing it still brings it back a
+		// minute later (see dismissTeaser), that's a separate, deliberate
+		// user action rather than this automatic first appearance.
+		function markShownOnce() {
+			try {
+				sessionStorage.setItem( TEASER_SHOWN_KEY, 'true' );
+			} catch ( e ) {
+				// Storage unavailable - it'll just show again on the next page.
+			}
+		}
+
+		function hasShownOnce() {
+			try {
+				return 'true' === sessionStorage.getItem( TEASER_SHOWN_KEY );
+			} catch ( e ) {
+				return false;
+			}
+		}
+
+		// The *timestamp* of the last dismissal is kept in sessionStorage,
+		// not a plain variable and not just a boolean flag - this is a
+		// normal multi-page WordPress site, not a SPA, so every new page
+		// view re-runs this whole script from scratch, and a plain variable
+		// would forget the dismissal (and the 1-minute countdown already
+		// in progress) the moment the visitor clicks to another page.
+		// Storing *when* it was dismissed, rather than just that it was,
+		// lets a later page load pick the countdown back up from wherever
+		// it actually is instead of restarting a fresh minute.
+		function getDismissedAt() {
+			try {
+				var raw = sessionStorage.getItem( TEASER_DISMISSED_AT_KEY );
+				return raw ? parseInt( raw, 10 ) : null;
+			} catch ( e ) {
+				return null;
+			}
+		}
 
 		function hideTeaser() {
 			teaser.classList.remove( 'is-visible' );
 		}
 
 		function showTeaser() {
-			if ( teaserDismissedForGood ) {
-				return;
-			}
 			if ( ! root.classList.contains( 'is-open' ) ) {
 				teaser.classList.add( 'is-visible' );
 			}
 		}
 
 		// Dismissing via the X (not opening the chat - that only hides it for
-		// that moment) is final: it never reappears again this visit.
+		// that moment) hides it, then brings it back a minute later.
 		function dismissTeaser() {
 			hideTeaser();
-			teaserDismissedForGood = true;
+			if ( reappearTimer ) {
+				clearTimeout( reappearTimer );
+			}
+			try {
+				sessionStorage.setItem( TEASER_DISMISSED_AT_KEY, String( Date.now() ) );
+			} catch ( e ) {
+				// Storage unavailable (private mode, blocked, etc.) - still
+				// reappears this page load, just not after a navigation.
+			}
+			reappearTimer = setTimeout( showTeaser, REAPPEAR_DELAY_MS );
 		}
 
 		bubble.addEventListener( 'click', function () {
@@ -166,10 +215,21 @@
 			send( text, messages, honeypot );
 		} );
 
-		// Shows once, a few seconds after the page loads - not tied to
-		// scrolling at all. Dismissing it via the X (see dismissTeaser)
-		// is final for the rest of this visit.
-		setTimeout( showTeaser, 4000 );
+		// Shows once, a few seconds after the first page of the visit loads -
+		// not again on every subsequent page - unless it was dismissed
+		// recently (including on a previous page this same visit), in which
+		// case it instead resumes whatever's left of that dismissal's
+		// 1-minute countdown.
+		var dismissedAt = getDismissedAt();
+		if ( null !== dismissedAt ) {
+			var remaining = REAPPEAR_DELAY_MS - ( Date.now() - dismissedAt );
+			reappearTimer = setTimeout( showTeaser, Math.max( remaining, 0 ) );
+		} else if ( ! hasShownOnce() ) {
+			setTimeout( function () {
+				showTeaser();
+				markShownOnce();
+			}, 4000 );
+		}
 	}
 
 	function openPanel( root, messages, honeypot ) {

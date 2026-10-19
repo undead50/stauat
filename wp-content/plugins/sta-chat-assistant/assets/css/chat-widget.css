@@ -153,11 +153,13 @@
 	background: rgba(255, 255, 255, 0.18);
 	border: none;
 	color: #fff;
-	width: 26px;
-	height: 26px;
+	/* 44x44 tap target (was 26x26) - this closes the whole chat panel, one
+	   of the more-used controls in the widget, not just a minor dismiss. */
+	width: 44px;
+	height: 44px;
 	border-radius: 999px;
 	cursor: pointer;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 1;
 	display: flex;
 	align-items: center;
