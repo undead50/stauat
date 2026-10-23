@@ -80,15 +80,15 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <link href="../wp-content/plugins/sta-chat-assistant/assets/css/chat-widget.css" id="stachat-widget-css" media="all" rel="stylesheet"/>
 <link href="../wp-content/plugins/sta-push-notifications/assets/css/subscribe-popup.css" id="stapush-popup-css" media="all" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&amp;family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;display=swap" id="stacare-fonts-css" media="all" rel="stylesheet"/>
-<link href="../wp-content/themes/stacare/dist/assets/main-DOUcRj7L.css" id="stacare-style-css" media="all" rel="stylesheet"/>
+<link href="../wp-content/themes/stacare/dist/assets/main-zPDpJV1t.css" id="stacare-style-css" media="all" rel="stylesheet"/>
 <link href="http://localhost:8080/physiotherapy/" rel="canonical"/>
 </head>
 <body class="wp-singular page-template-default page page-id-361 wp-custom-logo wp-embed-responsive wp-theme-stacare bg-brand-canvas text-on-surface font-body-md text-body-md antialiased min-h-screen overflow-x-hidden selection:bg-secondary-light selection:text-primary no-sidebar">
 <a class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-primary focus:text-on-primary focus:px-4 focus:py-2 focus:rounded-full" href="#main-content">Skip to main content</a>
-<header class="fixed top-0 left-0 w-full z-50 bg-brand-canvas/90 backdrop-blur-md border-b border-outline-variant/40 shadow-[0_4px_24px_rgb(var(--color-primary)/0.05)]" data-header="" id="masthead">
-<div class="block bg-primary text-on-primary py-3 sm:py-1.5 px-4 lg:px-8">
-<div class="max-w-[1440px] mx-auto flex items-center justify-between font-label-sm text-label-sm">
-<div class="flex items-center gap-4">
+<header class="static lg:fixed lg:top-0 lg:left-0 w-full z-50 bg-brand-canvas/90 backdrop-blur-md border-b border-outline-variant/40 shadow-[0_4px_24px_rgb(var(--color-primary)/0.05)]" data-header="" id="masthead">
+<div class="block bg-primary text-on-primary py-3 sm:py-1.5 px-4 lg:px-8" data-header-utility-bar="">
+<div class="max-w-[1440px] mx-auto flex items-center justify-between lg:justify-end font-label-sm text-label-sm">
+<div class="flex items-center gap-4 lg:hidden" data-header-utility-content="">
 <a class="hidden sm:flex items-center gap-2 text-white hover:text-secondary-light transition-colors" href="tel:1300782227">
 <span class="stacare-call-ring inline-flex text-white"><span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-primary"><span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px]" data-icon="call" translate="no"></span></span></span>
 <span class="text-[17px] leading-5 font-extrabold tracking-wide">1300 782 227</span>
@@ -98,15 +98,32 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
 </span>
 <span class="hidden md:inline text-secondary-light text-[13px] uppercase tracking-wider font-semibold">Right People, Right Support</span> </div>
-<div class="flex items-center gap-5 text-white/80">
-<a class="hidden sm:flex hover:text-secondary-light transition-colors items-center gap-1" href="../careers/index.html">
-<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px]" data-icon="work" translate="no"></span>Careers				</a>
+<div class="flex items-center gap-2 sm:gap-5 text-white/80">
+<a class="hidden lg:flex hover:text-secondary-light transition-colors items-center" data-header-utility-content="" href="../index.html">Home</a>
+<a class="hidden lg:flex hover:text-secondary-light transition-colors items-center" data-header-utility-content="" href="../events/index.html">Events</a>
+<div class="relative hidden lg:flex items-center" data-header-search="" data-simple-dropdown="">
+<button aria-label="Search" class="flex items-center justify-center w-11 h-11 sm:w-auto sm:h-auto sm:p-1 text-white hover:text-secondary-light transition-colors [&amp;.is-active]:text-secondary-light" data-dropdown-trigger="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] lg:text-[20px]" data-icon="search" translate="no"></span> </button>
+<div class="stacare-search-bar hidden" data-dropdown-panel="">
+<form action="http://localhost:8080/" class="stacare-search-bar-inner" method="get" role="search">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[20px] shrink-0 text-on-surface-variant" data-icon="search" translate="no"></span> <label class="sr-only" for="stacare-search-bar-input-desktop">Search for</label>
+<input class="flex-1 min-w-0 bg-transparent focus:outline-none font-body-md text-body-md text-on-surface" id="stacare-search-bar-input-desktop" name="s" placeholder="Start your search" type="search" value=""/>
+<button class="shrink-0 font-label-md text-label-md font-extrabold text-primary uppercase tracking-wide" type="submit">Go</button>
+<button aria-label="Close search" class="stacare-search-bar-close shrink-0 flex items-center justify-center text-on-primary bg-primary" data-search-bar-close="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="close" translate="no"></span> </button>
+</form>
+</div>
+</div>
+<a class="hidden sm:flex hover:text-secondary-light transition-colors items-center gap-1" data-header-utility-content="" href="../careers/index.html">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px]" data-icon="work" translate="no"></span>Work With Us				</a>
+<a class="hidden lg:inline-flex items-center justify-center px-4 py-1 rounded-md border border-white/50 text-white font-label-sm text-label-sm font-bold hover:bg-white/10 transition-colors" data-header-utility-content="" href="../contact/index.html">
+					Contact us				</a>
 </div>
 </div>
 </div>
 <div class="relative" data-mega-menu-wrap="">
 <div class="site-header-row h-[84px] sm:h-24 max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 lg:px-8 flex items-center gap-4 xl:gap-10">
-<div class="site-logo-wrap flex items-center shrink-0">
+<div class="site-logo-wrap flex items-center shrink-0" data-header-logo="">
 <a class="custom-logo-link" href="../index.html" rel="home"><img alt="STA Community Nursing &amp; NDIS Services logo" class="custom-logo" decoding="async" src="../wp-content/uploads/2026/09/ayush-logo.svg"/></a> </div>
 <nav aria-label="Primary" class="hidden lg:flex items-center gap-0.5 xl:gap-1 flex-1">
 <a class="nav-mega-trigger cursor-pointer flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-on-surface-variant transition-colors font-label-md text-[15px] xl:text-label-md 2xl:text-label-lg py-2 px-1.5 xl:px-2.5 2xl:px-3 rounded-md border border-transparent font-medium xl:font-medium 2xl:font-medium hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] hover:py-3.5 hover:-my-1.5 hover:-mx-1.5 hover:px-3 xl:hover:px-4 2xl:hover:px-[18px] [&amp;.is-active]:bg-[#e2fbff] [&amp;.is-active]:border-[#3f7b86] [&amp;.is-active]:text-[#28373e] [&amp;.is-active]:rounded-[12px] [&amp;.is-active]:py-3.5 [&amp;.is-active]:-my-1.5 [&amp;.is-active]:-mx-1.5 [&amp;.is-active]:px-3 xl:[&amp;.is-active]:px-4 2xl:[&amp;.is-active]:px-[18px]" data-mega-trigger="item-305" href="../who-we-are/index.html">
@@ -115,30 +132,23 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 			Who We Support			<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] nav-mega-chevron transition-transform" data-icon="expand_more" translate="no"></span> </a>
 <a class="nav-mega-trigger cursor-pointer flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-on-surface-variant transition-colors font-label-md text-[15px] xl:text-label-md 2xl:text-label-lg py-2 px-1.5 xl:px-2.5 2xl:px-3 rounded-md border border-transparent font-medium xl:font-medium 2xl:font-medium hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] hover:py-3.5 hover:-my-1.5 hover:-mx-1.5 hover:px-3 xl:hover:px-4 2xl:hover:px-[18px] [&amp;.is-active]:bg-[#e2fbff] [&amp;.is-active]:border-[#3f7b86] [&amp;.is-active]:text-[#28373e] [&amp;.is-active]:rounded-[12px] [&amp;.is-active]:py-3.5 [&amp;.is-active]:-my-1.5 [&amp;.is-active]:-mx-1.5 [&amp;.is-active]:px-3 xl:[&amp;.is-active]:px-4 2xl:[&amp;.is-active]:px-[18px]" data-mega-trigger="item-308" href="../what-we-do/index.html">
 			What We Do			<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] nav-mega-chevron transition-transform" data-icon="expand_more" translate="no"></span> </a>
-<div class="relative" data-simple-dropdown="">
-<a class="cursor-pointer nav-dropdown-trigger flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-on-surface-variant transition-colors font-label-md text-[15px] xl:text-label-md 2xl:text-label-lg py-2 px-1.5 xl:px-2.5 2xl:px-3 rounded-md border border-transparent font-medium xl:font-medium 2xl:font-medium [&amp;.is-active]:text-[#28373e] [&amp;.is-active]:bg-[#e2fbff] [&amp;.is-active]:border-[#3f7b86] [&amp;.is-active]:rounded-[12px] [&amp;.is-active]:py-3.5 [&amp;.is-active]:-my-1.5 [&amp;.is-active]:-mx-1.5 [&amp;.is-active]:px-3 xl:[&amp;.is-active]:px-4 2xl:[&amp;.is-active]:px-[18px]" data-dropdown-trigger="" href="../resources/index.html">
-			Resources			<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] nav-dropdown-chevron transition-transform" data-icon="expand_more" translate="no"></span> </a>
-<div class="absolute top-full left-0 pt-3 hidden z-40" data-dropdown-panel="">
-<ul class="bg-surface-container-lowest rounded-2xl shadow-lg border border-outline-variant/50 py-2 min-w-[220px]">
-<li class="px-2"><a class="block px-3 py-2.5 whitespace-nowrap font-body-md text-body-md font-normal text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent rounded-md transition-colors" href="../events/index.html">Events</a></li>
-</ul>
-</div>
-</div>
 <a class="nav-mega-trigger cursor-pointer flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-on-surface-variant transition-colors font-label-md text-[15px] xl:text-label-md 2xl:text-label-lg py-2 px-1.5 xl:px-2.5 2xl:px-3 rounded-md border border-transparent font-medium xl:font-medium 2xl:font-medium hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] hover:py-3.5 hover:-my-1.5 hover:-mx-1.5 hover:px-3 xl:hover:px-4 2xl:hover:px-[18px] [&amp;.is-active]:bg-[#e2fbff] [&amp;.is-active]:border-[#3f7b86] [&amp;.is-active]:text-[#28373e] [&amp;.is-active]:rounded-[12px] [&amp;.is-active]:py-3.5 [&amp;.is-active]:-my-1.5 [&amp;.is-active]:-mx-1.5 [&amp;.is-active]:px-3 xl:[&amp;.is-active]:px-4 2xl:[&amp;.is-active]:px-[18px]" data-mega-trigger="item-430" href="../funding-options/index.html">
 			Funding Options			<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] nav-mega-chevron transition-transform" data-icon="expand_more" translate="no"></span> </a>
-<div class="flex items-center gap-0.5 xl:gap-1 ml-3 2xl:ml-6">
-<div class="relative" data-simple-dropdown="">
-<a class="cursor-pointer nav-dropdown-trigger flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-on-surface-variant transition-colors font-label-md text-[15px] xl:text-label-md 2xl:text-label-lg py-2 px-1.5 xl:px-2.5 2xl:px-3 rounded-md border border-transparent font-medium xl:font-medium 2xl:font-medium [&amp;.is-active]:text-[#28373e] [&amp;.is-active]:bg-[#e2fbff] [&amp;.is-active]:border-[#3f7b86] [&amp;.is-active]:rounded-[12px] [&amp;.is-active]:py-3.5 [&amp;.is-active]:-my-1.5 [&amp;.is-active]:-mx-1.5 [&amp;.is-active]:px-3 xl:[&amp;.is-active]:px-4 2xl:[&amp;.is-active]:px-[18px]" data-dropdown-trigger="" href="../contact/index.html">
-			Contact Us			<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px] nav-dropdown-chevron transition-transform" data-icon="expand_more" translate="no"></span> </a>
-<div class="absolute top-full left-0 pt-3 hidden z-40" data-dropdown-panel="">
-<ul class="bg-surface-container-lowest rounded-2xl shadow-lg border border-outline-variant/50 py-2 min-w-[220px]">
-<li class="px-2"><a class="block px-3 py-2.5 whitespace-nowrap font-body-md text-body-md font-normal text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent rounded-md transition-colors" href="../make-a-referral/index.html">Make a Referral</a></li>
-</ul>
-</div>
-</div>
-</div>
 </nav>
-<div class="flex items-center gap-2 shrink-0 ml-auto">
+<div class="flex items-center gap-2 shrink-0 ml-auto" data-header-row-controls="">
+<div class="relative lg:hidden flex items-center" data-header-search="" data-simple-dropdown="">
+<button aria-label="Search" class="flex items-center justify-center w-11 h-11 rounded-full bg-surface-container-high text-primary [&amp;.is-active]:bg-primary-tint" data-dropdown-trigger="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[20px]" data-icon="search" translate="no"></span> </button>
+<div class="stacare-search-bar hidden" data-dropdown-panel="">
+<form action="http://localhost:8080/" class="stacare-search-bar-inner" method="get" role="search">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[20px] shrink-0 text-on-surface-variant" data-icon="search" translate="no"></span> <label class="sr-only" for="stacare-search-bar-input-mobile">Search for</label>
+<input class="flex-1 min-w-0 bg-transparent focus:outline-none font-body-md text-body-md text-on-surface" id="stacare-search-bar-input-mobile" name="s" placeholder="Start your search" type="search" value=""/>
+<button class="shrink-0 font-label-md text-label-md font-extrabold text-primary uppercase tracking-wide" type="submit">Go</button>
+<button aria-label="Close search" class="stacare-search-bar-close shrink-0 flex items-center justify-center text-on-primary bg-primary" data-search-bar-close="" type="button">
+<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="close" translate="no"></span> </button>
+</form>
+</div>
+</div>
 <a aria-label="Enquire" class="sm:hidden flex w-11 h-11 rounded-full bg-surface-container-high items-center justify-center text-primary" href="../contact/index.html">
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[20px]" data-icon="mail" translate="no"></span> </a>
 <a class="hidden sm:inline-flex lg:hidden items-center justify-center px-4 py-2.5 rounded-full border-2 border-primary/30 text-primary font-label-md text-label-md hover:bg-primary-tint hover:border-primary transition-all duration-200" href="../contact/index.html">Contact Us</a>
@@ -154,35 +164,35 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <div class="flex flex-col lg:flex-row gap-8 px-8 py-9">
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 flex-1">
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../our-story/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../our-story/index.html">
 									Our Story									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../meet-the-team/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../meet-the-team/index.html">
 									Meet the Team									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../care-process/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../care-process/index.html">
 									How We Work									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/initial-enquiry-assessment/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/initial-enquiry-assessment/index.html">
 									Initial Enquiry &amp; Assessment									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/personalised-care-plan/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/personalised-care-plan/index.html">
 									Personalised Care Plan									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/matching-your-care-team/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/matching-your-care-team/index.html">
 									Matching Your Care Team									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/ongoing-support-reviews/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-process/ongoing-support-reviews/index.html">
 									Ongoing Support &amp; Reviews									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../care-professionals/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../care-professionals/index.html">
 									Care Professionals									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/registered-nurses/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/registered-nurses/index.html">
 									Registered Nurses									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/enrolled-nurses/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/enrolled-nurses/index.html">
 									Enrolled Nurses									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/support-workers/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/support-workers/index.html">
 									Support Workers									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/allied-health-team/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../care-professionals/allied-health-team/index.html">
 									Allied Health Team									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 </div>
@@ -200,33 +210,33 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <div class="flex flex-col lg:flex-row gap-8 px-8 py-9">
 <div class="grid grid-cols-2 lg:grid-cols-5 gap-8 flex-1">
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/ndis-participants/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/ndis-participants/index.html">
 									NDIS Participants									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/autism-asd/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/autism-asd/index.html">
 									Autism (ASD)									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/physical-disability/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/physical-disability/index.html">
 									Physical Disability									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/psychosocial-disability/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/psychosocial-disability/index.html">
 									Psychosocial Disability									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/intellectual-disability/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/intellectual-disability/index.html">
 									Intellectual Disability									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/developmental-delay/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../who-we-support/ndis-participants/developmental-delay/index.html">
 									Developmental Delay									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/self-managed-seniors/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/self-managed-seniors/index.html">
 									Self-Managed Seniors									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/support-coordinators/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/support-coordinators/index.html">
 									Support Coordinators									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/plan-managers/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/plan-managers/index.html">
 									Plan Managers									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/case-managers/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../who-we-support/case-managers/index.html">
 									Case Managers									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 </div>
@@ -236,85 +246,85 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <div class="flex flex-col lg:flex-row gap-8 px-8 py-9">
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 flex-1">
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../home-care/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../home-care/index.html">
 									Home Care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../aged-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../aged-care/index.html">
 									Aged care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../disability-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../disability-care/index.html">
 									Disability Care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../personal-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../personal-care/index.html">
 									Personal care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../cleaning-services/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../cleaning-services/index.html">
 									Cleaning services									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../gardening/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../gardening/index.html">
 									Gardening									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../shopping-assistance/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../shopping-assistance/index.html">
 									Shopping assistance									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../patient-transport/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../patient-transport/index.html">
 									Patient transport									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../social-and-community-participation/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../social-and-community-participation/index.html">
 									Social and community participation									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../companionship/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../companionship/index.html">
 									Companionship									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../respite-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../respite-care/index.html">
 									Respite care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../nursing/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../nursing/index.html">
 									Nursing									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/catheter-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/catheter-care/index.html">
 									Catheter care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/injection-assistance/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/injection-assistance/index.html">
 									Injection assistance									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/medication-management/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/medication-management/index.html">
 									Medication management									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/wound-management/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/wound-management/index.html">
 									Wound management									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/peg-feeding/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/peg-feeding/index.html">
 									PEG feeding									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/stoma-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/stoma-care/index.html">
 									Stoma care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/continence-assessment/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/continence-assessment/index.html">
 									Continence Assessment									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/palliative-care/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/palliative-care/index.html">
 									Palliative care									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/chronic-disease-management/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../nursing/chronic-disease-management/index.html">
 									Chronic disease management									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../allied-health/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../allied-health/index.html">
 									Allied Health									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="index.html">
 									Physiotherapy									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../occupational-therapist/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../occupational-therapist/index.html">
 									Occupational therapist									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../podiatrist/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../podiatrist/index.html">
 									Podiatrist									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../dietitian/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../dietitian/index.html">
 									Dietitian									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../speech-pathologist-therapist/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../speech-pathologist-therapist/index.html">
 									Speech Pathologist/therapist									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../psychologist/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../psychologist/index.html">
 									Psychologist									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../social-worker/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../social-worker/index.html">
 									Social Worker									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../ndis/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../ndis/index.html">
 									NDIS									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../positive-behaviour-support/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../positive-behaviour-support/index.html">
 									Positive Behaviour Support									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../behaviour-support-practitioner/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../behaviour-support-practitioner/index.html">
 									Behaviour Support Practitioner									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../early-childhood-supports/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../early-childhood-supports/index.html">
 									Early Childhood Supports									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../capacity-building/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../capacity-building/index.html">
 									Capacity Building									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../therapeutic-support/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../therapeutic-support/index.html">
 									Therapeutic Support									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../specialised-support-coordination/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../specialised-support-coordination/index.html">
 									Specialised Support coordination									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../support-coordination/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../support-coordination/index.html">
 									Support Coordination									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 </div>
@@ -324,25 +334,25 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <div class="flex flex-col lg:flex-row gap-8 px-8 py-9">
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 flex-1">
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/support-at-home-sah/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/support-at-home-sah/index.html">
 									Support at Home (SAH)									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/worksafe/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/worksafe/index.html">
 									WorkSafe									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/private-funding/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/private-funding/index.html">
 									Private Funding									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 <div class="flex flex-col gap-2.5">
-<a class="flex items-center gap-1 self-start font-title-md text-title-md text-primary font-bold hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/ndis-funding/index.html">
+<a class="flex items-center gap-1 self-start font-label-lg text-label-lg text-primary hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1 mb-1" href="../funding-options/ndis-funding/index.html">
 									NDIS									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[18px]" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/ndia-managed/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/ndia-managed/index.html">
 									NDIA-managed									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/self-managed/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/self-managed/index.html">
 									Self-managed									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
-<a class="flex items-center gap-1 font-body-sm text-body-sm text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/plan-managed/index.html">
+<a class="flex items-center gap-1 font-body-md text-body-md text-on-surface-variant hover:text-[#28373e] hover:bg-[#e2fbff] hover:border-[#3f7b86] hover:rounded-[12px] border border-transparent transition-colors rounded-md -mx-3 px-3 py-1" href="../ndis/plan-managed/index.html">
 									Plan-managed									<span aria-hidden="true" class="material-symbols-outlined notranslate text-[14px] opacity-50" data-icon="chevron_right" translate="no"></span> </a>
 </div>
 </div>
@@ -373,7 +383,8 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>Who We Are</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:columns-2 sm:gap-x-10">
 <div class="break-inside-avoid">
 <a class="block pt-3 pb-1 font-label-md text-label-md text-primary font-bold" href="../our-story/index.html">Our Story</a>
@@ -406,11 +417,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </div>
 </div>
 </div>
+</div>
 <div class="border-b border-outline-variant/30">
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>Who We Support</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:columns-2 sm:gap-x-10">
 <div class="break-inside-avoid">
 <a class="block pt-3 pb-1 font-label-md text-label-md text-primary font-bold" href="../who-we-support/ndis-participants/index.html">NDIS Participants</a>
@@ -445,11 +458,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </div>
 </div>
 </div>
+</div>
 <div class="border-b border-outline-variant/30">
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>What We Do</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:columns-2 sm:gap-x-10">
 <div class="break-inside-avoid">
 <a class="block pt-3 pb-1 font-label-md text-label-md text-primary font-bold" href="../home-care/index.html">Home Care</a>
@@ -507,11 +522,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </div>
 </div>
 </div>
+</div>
 <div class="border-b border-outline-variant/30">
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>Resources</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:grid sm:grid-cols-2 sm:gap-x-10">
 <div>
 <div class="flex flex-col gap-0.5 mb-3">
@@ -523,11 +540,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 						Learn more<span class="sr-only"> about Resources</span><span aria-hidden="true" class="material-symbols-outlined notranslate text-[16px]" data-icon="arrow_forward" translate="no"></span> </a>
 </div>
 </div>
+</div>
 <div class="border-b border-outline-variant/30">
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>Contact Us</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:grid sm:grid-cols-2 sm:gap-x-10">
 <div>
 <div class="flex flex-col gap-0.5 mb-3">
@@ -539,11 +558,13 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 						Learn more<span class="sr-only"> about Contact Us</span><span aria-hidden="true" class="material-symbols-outlined notranslate text-[16px]" data-icon="arrow_forward" translate="no"></span> </a>
 </div>
 </div>
+</div>
 <div class="border-b border-outline-variant/30">
 <button aria-expanded="false" class="mobile-accordion-trigger w-full flex items-center justify-between py-4 text-left font-label-lg text-label-lg text-primary font-bold" data-accordion-trigger="" type="button">
 <span>Funding Options</span>
 <span aria-hidden="true" class="material-symbols-outlined notranslate text-[22px] mobile-accordion-chevron transition-transform duration-200" data-icon="expand_more" translate="no"></span> </button>
-<div class="mobile-accordion-panel hidden pb-5 pl-1">
+<div class="mobile-accordion-panel">
+<div class="mobile-accordion-panel-inner pb-5 pl-1">
 <div class="sm:columns-2 sm:gap-x-10">
 <div class="break-inside-avoid">
 <a class="block pt-3 pb-1 font-label-md text-label-md text-primary font-bold" href="../funding-options/support-at-home-sah/index.html">Support at Home (SAH)</a>
@@ -571,6 +592,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </div>
 </div>
 </div>
+</div>
 </nav>
 <div class="shrink-0 border-t border-outline-variant/40 px-4 py-4 sm:px-6">
 <a class="flex items-center justify-center gap-3 rounded-full bg-primary px-6 py-3.5 font-label-lg text-label-lg font-bold text-on-primary" href="tel:1300782227">
@@ -579,7 +601,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 </a>
 </div>
 </div>
-<main class="w-full pt-[calc(109px_+_env(safe-area-inset-top))] sm:pt-[calc(132px_+_env(safe-area-inset-top))] bg-brand-canvas" id="main-content">
+<main class="w-full lg:pt-[calc(132px_+_env(safe-area-inset-top))] bg-brand-canvas" id="main-content">
 <div class="flex flex-col w-full">
 <section class="relative w-full overflow-hidden bg-gradient-to-b from-primary-tint/50 via-brand-canvas to-brand-canvas pt-14 pb-16">
 <svg aria-hidden="true" class="pointer-events-none absolute right-0 top-0 w-64 h-64 text-primary/5 rotate-12" fill="currentColor" viewbox="0 0 100 100">
@@ -659,7 +681,7 @@ ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:
 <h3 class="font-title-md text-title-md font-bold mb-4">Quick Links</h3>
 <ul class="flex flex-col gap-2.5"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-92" id="menu-item-92"><a href="../index.html"><span class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Home</span></a></li>
 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-94" id="menu-item-94"><a href="../services/index.html"><span class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Our Services</span></a></li>
-<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95" id="menu-item-95"><a href="../careers/index.html"><span class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Careers</span></a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95" id="menu-item-95"><a href="../careers/index.html"><span class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Work With Us</span></a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-97" id="menu-item-97"><a href="../privacy-policy/index.html" rel="privacy-policy"><span class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors">Privacy Policy</span></a></li>
 </ul> </div>
 <div>
@@ -855,19 +877,19 @@ var staA11y = {"position":"left","color":"#2F8F4E","languages":[{"code":"","labe
 </script>
 <script data-wp-strategy="defer" defer="" id="staa11y-widget-js" src="../wp-content/plugins/sta-accessibility/assets/js/a11y-widget.js"></script>
 <script id="stachat-widget-js-extra">
-var staChat = {"restUrl":"http://localhost:8080/wp-json/sta-chat/v1/message","restNonce":"95e04f04c0","botName":"STA Support","brandColor":"#501CA8","strings":{"placeholder":"Type a message...","send":"Send","close":"Close chat","open":"Open chat","error":"Sorry, something went wrong. Please try again in a moment, or call us directly.","activeNow":"Active now","teaserText":"Hi! \ud83d\udc4b Got a question about our services? I'm here to help.","dismissTeaser":"Dismiss"}};
+var staChat = {"restUrl":"http://localhost:8080/wp-json/sta-chat/v1/message","restNonce":"d6a5204842","botName":"STA Support","brandColor":"#501CA8","strings":{"placeholder":"Type a message...","send":"Send","close":"Close chat","open":"Open chat","error":"Sorry, something went wrong. Please try again in a moment, or call us directly.","activeNow":"Active now","teaserText":"Hi! \ud83d\udc4b Got a question about our services? I'm here to help.","dismissTeaser":"Dismiss"}};
 //# sourceURL=stachat-widget-js-extra
 </script>
 <script data-wp-strategy="defer" defer="" id="stachat-widget-js" src="../wp-content/plugins/sta-chat-assistant/assets/js/chat-widget.js"></script>
 <script id="stapush-subscribe-js-extra">
-var staPush = {"restUrl":"http://localhost:8080/wp-json/sta/v1/push/","restNonce":"95e04f04c0","vapidPublicKey":"BE5D8dPkrR6gV2pNWWXIW_edDcNZCd0wg9rWonZAGQOYgmxAZK02yzSRIf1xy5kajaF66odv2efjSWtQZ1rFgl8","serviceWorkerUrl":"http://localhost:8080/sta-push-sw.js"};
+var staPush = {"restUrl":"http://localhost:8080/wp-json/sta/v1/push/","restNonce":"d6a5204842","vapidPublicKey":"BE5D8dPkrR6gV2pNWWXIW_edDcNZCd0wg9rWonZAGQOYgmxAZK02yzSRIf1xy5kajaF66odv2efjSWtQZ1rFgl8","serviceWorkerUrl":"http://localhost:8080/sta-push-sw.js"};
 //# sourceURL=stapush-subscribe-js-extra
 </script>
 <script data-wp-strategy="defer" defer="" id="stapush-subscribe-js" src="../wp-content/plugins/sta-push-notifications/assets/js/subscribe.js"></script>
 <script id="stacare-script-js-extra">
-var staCare = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","contactNonce":"327665fc72","newsletterNonce":"3335186d9d","journeyUrl":"http://localhost:8080/start-your-journey/","suburbsUrl":"http://localhost:8080/wp-content/themes/stacare/assets/au-suburbs.txt?v=1789922316","homeState":"VIC"};
+var staCare = {"ajaxUrl":"http://localhost:8080/wp-admin/admin-ajax.php","contactNonce":"64e340a8c2","newsletterNonce":"9389e1608b","journeyUrl":"http://localhost:8080/start-your-journey/","suburbsUrl":"http://localhost:8080/wp-content/themes/stacare/assets/au-suburbs.txt?v=1789922316","homeState":"VIC"};
 //# sourceURL=stacare-script-js-extra
 </script>
-<script id="stacare-script-js" src="../wp-content/themes/stacare/dist/assets/main-CARrcuVb.js" type="module"></script>
+<script id="stacare-script-js" src="../wp-content/themes/stacare/dist/assets/main-CBbfpmPg.js" type="module"></script>
 </body>
 </html>
